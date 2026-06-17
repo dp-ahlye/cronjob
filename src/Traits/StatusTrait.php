@@ -12,6 +12,9 @@ use Daycry\CronJob\Job;
  */
 trait StatusTrait
 {
+    /** @var resource|null */
+    protected $lockHandle = null;
+
     protected function isRunningFlagPath(): string
     {
         return $this->config->filePath . 'running/' . $this->getName();
